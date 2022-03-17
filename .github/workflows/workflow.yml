@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: stdout
-        run: |
-          echo {{ secrets.TOPSECRET }}
+    - shell: bash
+      env:
+        SUPER_SECRET: ${{ secrets.TOPSECRET }}
+      run: |
+        example-command "$SUPER_SECRET"
+    
