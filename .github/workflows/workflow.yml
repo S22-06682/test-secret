@@ -9,9 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    - shell: bash
-      env:
-        SUPER_SECRET: ${{ secrets.TOPSECRET }}
-      run: |
-        example-command "$SUPER_SECRET"
+    steps:
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.TOPSECRET }}
+        run: |
+          echo "$SUPER_SECRET"
     
