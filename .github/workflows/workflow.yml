@@ -20,5 +20,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add file
           git commit -m "Add file" 
-          git push origin main
+          git push origin master
     
