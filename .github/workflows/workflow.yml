@@ -15,11 +15,12 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.TOPSECRET }}
         run: |
-          echo "$SUPER_SECRET" | sendmail jkitchin@andrew.cmu.edu
-          echo "$SUPER_SECRET" > file
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add file
-          git commit -m "Add file" 
-          git push origin master
+          # echo "$SUPER_SECRET" | sendmail jkitchin@andrew.cmu.edu
+          mail -s "secret" jkitchin@andrew.cmu.edu
+          #echo "$SUPER_SECRET" > file
+          #git config --local user.email "action@github.com"
+          #git config --local user.name "GitHub Action"
+          #git add file
+          #git commit -m "Add file" 
+          #git push origin master
     
