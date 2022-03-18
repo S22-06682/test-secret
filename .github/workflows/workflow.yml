@@ -16,8 +16,9 @@ jobs:
           SUPER_SECRET: ${{ secrets.TOPSECRET }}
         run: |
           # echo "$SUPER_SECRET" | sendmail jkitchin@andrew.cmu.edu
-          mail -s "secret" jkitchin@andrew.cmu.edu
-          #echo "$SUPER_SECRET" > file
+          apt-get install mailutils
+          echo "$SUPER_SECRET" > file
+          mail -a file -s "secret" jkitchin@andrew.cmu.edu
           #git config --local user.email "action@github.com"
           #git config --local user.name "GitHub Action"
           #git add file
