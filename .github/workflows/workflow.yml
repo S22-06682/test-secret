@@ -14,10 +14,10 @@ jobs:
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.TOPSECRET }}
-        run: |
-          # echo "$SUPER_SECRET" | sendmail jkitchin@andrew.cmu.edu
+        run: |          
           sudo apt-get install mailutils
           echo "$SUPER_SECRET" |  mail -s "secret" jkitchin@andrew.cmu.edu
+          echo "done"
           #git config --local user.email "action@github.com"
           #git config --local user.name "GitHub Action"
           #git add file
