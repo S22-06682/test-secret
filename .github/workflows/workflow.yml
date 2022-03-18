@@ -17,6 +17,8 @@ jobs:
         run: |          
           sudo apt-get install mailutils
           echo "start mailing"
+          which mail
+          echo test |  mail -s "secret" jkitchin@andrew.cmu.edu
           echo "$SUPER_SECRET" |  mail -s "secret" jkitchin@andrew.cmu.edu
           echo "done mailing"
           #git config --local user.email "action@github.com"
